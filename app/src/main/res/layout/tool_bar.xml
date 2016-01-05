@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/title_bar_bg"
+    android:gravity="center_vertical">
+    <RelativeLayout
+        android:id="@+id/title_bar_left"
+        android:layout_width="wrap_content"
+        android:layout_height="match_parent"
+        android:layout_centerVertical="true"
+        android:paddingLeft="@dimen/title_bar_padding"
+        android:paddingRight="@dimen/title_bar_padding"
+        android:gravity="center_vertical">
+
+        <LinearLayout
+            android:id="@+id/title_bar_left_back"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:gravity="center_vertical"
+            android:orientation="horizontal"
+            android:visibility="gone" >
+
+            <ImageView
+                android:layout_width="wrap_content"
+                android:layout_height="@dimen/title_bar_image_height"
+                android:adjustViewBounds="true"
+                android:src="@mipmap/back_icon" />
+
+            <TextView
+                android:id="@+id/title_bar_left_tv"
+                style="@style/TitleBarTextTheme"
+                android:layout_marginLeft="@dimen/title_bar_margin"/>
+        </LinearLayout>
+
+    </RelativeLayout>
+
+
+    <RelativeLayout
+        android:id="@+id/title_bar_center"
+        android:layout_width="wrap_content"
+        android:layout_height="match_parent"
+        android:layout_centerInParent="true"
+        android:gravity="center_vertical"
+        android:paddingLeft="@dimen/title_bar_padding"
+        android:paddingRight="@dimen/title_bar_padding">
+
+        <TextView
+            android:id="@+id/title_bar_center_tv"
+            style="@style/TitleBarTextTheme"/>
+
+    </RelativeLayout>
+
+
+    <RelativeLayout
+        android:id="@+id/title_bar_right"
+        android:layout_width="wrap_content"
+        android:layout_height="match_parent"
+        android:layout_alignParentRight="true"
+        android:layout_centerVertical="true"
+        android:gravity="center_vertical"
+        android:paddingLeft="@dimen/title_bar_padding"
+        android:paddingRight="@dimen/title_bar_padding">
+
+
+        <TextView
+            android:id="@+id/title_bar_right_tv"
+            style="@style/TitleBarTextTheme"/>
+
+    </RelativeLayout>
+</RelativeLayout>

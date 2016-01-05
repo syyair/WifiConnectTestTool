@@ -1,0 +1,38 @@
+<resources>
+    <string name="app_name">天巡测试</string>
+
+    <string name="hello_world">Hello world!</string>
+    <string name="action_settings">Settings</string>
+
+    <string name="open_wifi">打开WiFi</string>
+    <string name="close_wifi">关闭WiFi</string>
+    <string name="scan_wifi">扫描WiFi</string>
+
+    <string name="network_manager">网络管理</string>
+    <string name="connect">连接</string>
+    <string name="disconnect">断开</string>
+
+    <string name="start">开始</string>
+    <string name="end">结束</string>
+
+    <string name="connect_ok">连接成功</string>
+    <string name="connect_error">连接失败</string>
+    <string name="status">状态</string>
+
+    <string name="ssid">SSID</string>
+    <string name="bssid">BSSID</string>
+
+
+    <string name="on_time">连接时间</string>
+    <string name="off_time">断开时间</string>
+
+
+    <string name="please_waiting">请稍后</string>
+    <string name="please_enter_password">请输入密码</string>
+    <string name="wifi_open_success">wifi打开成功</string>
+    <string name="wifi_open_fail">wifi打开失败</string>
+    
+    <string name="blocking_test_result">阻断测试结果</string>
+
+
+</resources>

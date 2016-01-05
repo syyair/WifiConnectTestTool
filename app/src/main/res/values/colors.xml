@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <color name="title_bar_bg">#032C45</color>
+    <color name="title_bar_text_color">#ffffff</color>
+
+    <color name="base_bg">#ffffff</color> <!-- 所有白色都用这个 -->
+    <color name="base_black">#000000</color>
+    <color name="base_grey_bg">#dddddd</color>  <!-- 所有的灰色背景的颜色都采用这个 -->
+    <color name="base_dark_grey">#606060</color><!-- 所有深灰色都用这个  -->
+    <color name="base_red">#EA7670</color>
+
+
+    <color name="base_tv_color_white">@color/base_bg</color>
+    <color name="base_tv_color_black">@color/base_black</color>
+    <color name="base_tv_color_dark_grey">@color/base_dark_grey</color>
+    <color name="base_tv_color_red">@color/base_red</color>
+
+    <color name="titile_bar_tv_normal">#2E77A2</color>
+
+
+
+    <color name="base_yellow">#fff3b2</color>
+    <color name="base_blue">#284c62</color>
+
+
+
+    <color name="base_tv_red_color">@color/base_red</color>
+    <color name="base_tv_white_color">@color/base_bg</color>
+    <color name="base_tv_black_color">@color/base_black</color>
+    <color name="base_tv_grey_color">@color/base_dark_grey</color>
+
+    <color name="common_button_normal">@color/base_red</color>
+    <color name="common_button_selected">@color/base_red</color>
+
+
+
+
+
+</resources>

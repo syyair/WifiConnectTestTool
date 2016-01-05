@@ -1,0 +1,50 @@
+<resources>
+
+    <!-- Base application theme. -->
+    <style name="AppTheme" parent="Theme.AppCompat.Light.NoActionBar">
+        <!-- Customize your theme here. -->
+        <item name="android:windowNoTitle">true</item>
+        <item name="android:windowActionBar">false</item>
+        <item name="android:textColor">@color/base_dark_grey</item>
+        <item name="android:windowBackground">@color/base_bg</item>
+    </style>
+
+    <style name="CommonAppTheme" parent="AppTheme">
+        <item name="android:launchMode">singleTask</item>
+    </style>
+
+
+
+    <style name="TitleBarTextTheme">
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:textSize">@dimen/title_bar_text_size</item>
+        <item name="android:textColor">@color/title_bar_text_color</item>
+        <item name="android:singleLine">true</item>
+    </style>
+
+
+    <style name="HorizontialLine">
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">1dp</item>
+        <item name="android:background">@color/base_grey_bg</item>
+    </style>
+
+
+    <style name="VerticalLine">
+        <item name="android:layout_width">1dp</item>
+        <item name="android:layout_height">match_parent</item>
+        <item name="android:background">@color/base_grey_bg</item>
+    </style>
+
+
+    <style name="CommonButtonTheme">
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">@dimen/login_button_height</item>
+        <item name="android:textColor">@color/base_tv_white_color</item>
+        <item name="android:textSize">@dimen/login_button_text_size</item>
+        <item name="android:background">@drawable/common_button_bg</item>
+        <item name="android:layout_margin">@dimen/common_page_item_margin</item>
+    </style>
+
+</resources>
