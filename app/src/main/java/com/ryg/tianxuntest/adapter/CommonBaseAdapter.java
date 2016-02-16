@@ -9,6 +9,9 @@ import java.util.List;
 
 /**
  * Created by renyiguang on 2015/7/13.
+ * 封装了一个基础的数据适配器
+ * 构造器中传入context和list
+ * 获得数据的数量，单个数据，数据id，添加数据，刷新数据，清除数据
  */
 public abstract class CommonBaseAdapter<T> extends BaseAdapter {
 
@@ -24,12 +27,12 @@ public abstract class CommonBaseAdapter<T> extends BaseAdapter {
 
     @Override
     public int getCount() {
-        return list == null?0:list.size();
+        return list == null ? 0 : list.size();
     }
 
     @Override
     public T getItem(int position) {
-        return list == null?null:list.get(position);
+        return list == null ? null : list.get(position);
     }
 
     @Override
@@ -37,12 +40,11 @@ public abstract class CommonBaseAdapter<T> extends BaseAdapter {
         return position;
     }
 
-
     public void addItems(List<T> objects){
-        if(list==null){
+        if(list == null){
             list = new ArrayList<T>();
         }
-        if(objects!=null&&objects.size()>0) {
+        if(objects != null && objects.size() > 0) {
             list.addAll(objects);
         }
         notifyDataSetChanged();
@@ -54,7 +56,7 @@ public abstract class CommonBaseAdapter<T> extends BaseAdapter {
     }
 
     public void clearItems(){
-        if(list!=null&&list.size()>0){
+        if(list != null && list.size() > 0){
             list.clear();
         }
         notifyDataSetChanged();

@@ -18,6 +18,8 @@ import greendao.WifiLog;
 
 /**
  * Created by sunyingying on 2015/12/8.
+ * 计算每次的链接时间和断开时间
+ * 把结果写入到文件中
  */
 public class GetConnectTime {
 
@@ -122,11 +124,11 @@ public class GetConnectTime {
         if(Constant.isWritWifiResult){
 
             //每次都会调用吗，还是只会调用一次
-            fileResut = new File(sdDir + "//ConnectResult-wifi.txt");
+            fileResut = new File(sdDir + "//ConnectResult_wifi.txt");
         }
         else if (Constant.isWirteTerminalResult){
 
-            fileResut = new File(sdDir + "//ConnectResult-Terminal.txt");
+            fileResut = new File(sdDir + "//ConnectResult_Terminal.txt");
         }
 
         if(!fileResut.exists()){

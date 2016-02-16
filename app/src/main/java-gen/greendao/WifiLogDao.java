@@ -97,7 +97,7 @@ public class WifiLogDao extends AbstractDao<WifiLog, Long> {
             cursor.isNull(offset + 1) ? null : cursor.getString(offset + 1), // name
             cursor.getLong(offset + 2), // time
             cursor.isNull(offset + 3) ? null : cursor.getString(offset + 3), // BSSID
-             cursor.isNull(offset + 4) ? null : cursor.getString(offset + 4) // data
+            cursor.isNull(offset + 4) ? null : cursor.getString(offset + 4) // data
         );
         return entity;
     }

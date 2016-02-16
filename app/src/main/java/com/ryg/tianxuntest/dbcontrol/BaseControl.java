@@ -1,6 +1,5 @@
 package com.ryg.tianxuntest.dbcontrol;
 
-import android.content.Context;
 import android.database.sqlite.SQLiteDatabase;
 
 import com.ryg.tianxuntest.TianXunApplication;
@@ -11,6 +10,7 @@ import greendao.DaoSession;
 
 /**
  * Created by renyiguang on 2015/8/13.
+ * 没看懂干什么的
  */
 public abstract class BaseControl {
     protected SQLiteDatabase db;
@@ -27,6 +27,5 @@ public abstract class BaseControl {
     public void close(){
         db.close();
     }
-
 
 }

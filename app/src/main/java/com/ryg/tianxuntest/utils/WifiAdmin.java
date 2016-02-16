@@ -16,6 +16,7 @@ import java.util.List;
  * Created by renyiguang on 2015/9/22.
  * Create a wifiConfiguaration object
  * Other method about wifi
+ * 连接wifi的相关操作功能
  */
 public class WifiAdmin {
 
@@ -33,7 +34,6 @@ public class WifiAdmin {
         mWifiManager = (WifiManager) TianXunApplication.getInstance().getSystemService(Context.WIFI_SERVICE);
         mWifiInfo = mWifiManager.getConnectionInfo();
     }
-
 
     public static WifiAdmin getInstance(){
         if(instance == null){

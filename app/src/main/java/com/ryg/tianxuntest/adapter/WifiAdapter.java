@@ -12,6 +12,7 @@ import java.util.List;
 
 /**
  * Created by renyiguang on 2015/9/22.
+ * 显示主界面热点信息数据的适配器
  */
 public class WifiAdapter extends CommonBaseAdapter<ScanResult> {
 

@@ -28,6 +28,7 @@ import greendao.WifiLog;
 
 /**
  * Created by renyiguang on 2015/9/22.
+ * 发送热点连接变化的广播
  */
 public class WifiConnectReceiver extends BroadcastReceiver {
 

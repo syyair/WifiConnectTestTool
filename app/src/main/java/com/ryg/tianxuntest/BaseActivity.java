@@ -19,6 +19,11 @@ import com.ryg.tianxuntest.view.NetProgressDialog;
 
 /**
  * Created by renyiguang on 2015/7/11.
+ * activity创建的基础类
+ * 实例化activity_base.xml和tool_bar.xml中的组件
+ * 设置view的方法
+ * initView（）和setView（）两个抽象方法
+ * 一个点击事件（不知道干什么用的）
  */
 public abstract class BaseActivity extends AppCompatActivity implements View.OnClickListener {
 
@@ -40,10 +45,9 @@ public abstract class BaseActivity extends AppCompatActivity implements View.OnC
     private TextView title_bar_center_textview;
     private TextView title_bar_right_textview;
 
+    //不懂
     protected InputMethodManager imm;
     protected NetProgressDialog netProgressDialog;
-
-
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -65,8 +69,6 @@ public abstract class BaseActivity extends AppCompatActivity implements View.OnC
         title_bar_center_textview = (TextView)centerView.findViewById(R.id.title_bar_center_tv);
         title_bar_right_textview = (TextView)rightView.findViewById(R.id.title_bar_right_tv);
 
-
-
         mainContent = (RelativeLayout)findViewById(R.id.main_content);
         mainView = inflater.inflate(getContentView(),null);
         mainContent.addView(mainView,new RelativeLayout.LayoutParams(RelativeLayout.LayoutParams.MATCH_PARENT,RelativeLayout.LayoutParams.MATCH_PARENT));
@@ -74,12 +76,12 @@ public abstract class BaseActivity extends AppCompatActivity implements View.OnC
         imm = (InputMethodManager) getSystemService(Context.INPUT_METHOD_SERVICE);
         netProgressDialog = new NetProgressDialog(context,R.string.please_waiting);
 
+        //两个抽象方法
         initView();
         setView();
     }
 
-
-
+    //不知道是干什么用的
     @Override
     public void onClick(View v) {
         if(v.getId() == R.id.title_bar_left){
@@ -95,7 +97,6 @@ public abstract class BaseActivity extends AppCompatActivity implements View.OnC
         }
     }
 
-
     public void hideSoftInput(EditText view){
         imm.hideSoftInputFromWindow(view.getWindowToken(),0);}
 
@@ -110,14 +111,12 @@ public abstract class BaseActivity extends AppCompatActivity implements View.OnC
         imm.toggleSoftInput(InputMethodManager.SHOW_IMPLICIT, InputMethodManager.HIDE_NOT_ALWAYS);
     }
 
-
     /**
      * hide title
      */
     protected void hideTitle( ) {
         toolbar.setVisibility(View.GONE);
     }
-
 
     /**
      * set left view
@@ -155,7 +154,6 @@ public abstract class BaseActivity extends AppCompatActivity implements View.OnC
 
     }
 
-
     public void setLeftBack(){
 
         title_bar_left_back.setVisibility(View.VISIBLE);
@@ -166,7 +164,6 @@ public abstract class BaseActivity extends AppCompatActivity implements View.OnC
         setLeftBack();
         title_bar_left_textview.setText(getResources().getString(id));
     }
-
 
     public void setCenterTextView (int id){
 
@@ -197,7 +194,6 @@ public abstract class BaseActivity extends AppCompatActivity implements View.OnC
     public abstract void initView();
     public abstract  void setView();
 
-
     public void showToast(String str){
         Toast.makeText(context,str,Toast.LENGTH_LONG).show();
     }
@@ -209,6 +205,5 @@ public abstract class BaseActivity extends AppCompatActivity implements View.OnC
     public void showLog(String str){
         Log.i(NAME,str);
     }
-
 
 }

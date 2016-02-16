@@ -30,9 +30,16 @@ import java.util.HashMap;
 import java.util.Iterator;
 import java.util.List;
 
-
+/**
+ * Created by sunyingying on 2016/2/16
+ * 打开应用进入的第一个activity
+ * 设置界面，包括adapterlist，底部的三个功能按钮，下拉刷新以及点击事件
+ * 扫描wifi记录系统曾经链接过的wifi
+ * 终端隔离测试自动连接wifi的功能
+ */
 public class MainActivity extends BaseActivity implements View.OnClickListener,AdapterView.OnItemClickListener,ConnectedStatusListener {
 
+    //下拉刷新
     private PullToRefreshListView lv_wifi;
     private WifiAdapter wifiAdapter;
 
@@ -60,6 +67,7 @@ public class MainActivity extends BaseActivity implements View.OnClickListener,A
     @Override
     public void initView() {
 
+        //给tool_bar.xml中的title_bar_center_tv textview设置标题
         setCenterTextView(R.string.app_name);
 
         lv_wifi = (PullToRefreshListView) findViewById(R.id.lv_wifi);
@@ -79,8 +87,6 @@ public class MainActivity extends BaseActivity implements View.OnClickListener,A
         wifiLogControl = WifiLogControl.getInstance();
 
         Constant.isWirteTerminalResult = false;
-
-
     }
 
     @Override
@@ -134,7 +140,7 @@ public class MainActivity extends BaseActivity implements View.OnClickListener,A
                     }
 
                     Constant.isWirteTerminalResult = true;
-                    File file = new File(String.valueOf(Environment.getExternalStorageDirectory()) + "//ConnectResult-Terminal.txt");
+                    File file = new File(String.valueOf(Environment.getExternalStorageDirectory()) + "//ConnectResult_Terminal.txt");
                     if(file.exists()){
                         file.delete();
                     }
@@ -170,7 +176,6 @@ public class MainActivity extends BaseActivity implements View.OnClickListener,A
         Collections.sort(orignList, comparator);
 
         wifiAdapter.refreshItems(orignList);
-
 
         lv_wifi.postDelayed(new Runnable() {
             @Override

@@ -49,6 +49,7 @@ import greendao.WifiLog;
 
 /**
  * Created by renyiguang on 2015/9/25.
+ * 主页面点击热点进入到的热点信息页面以及页面的相关操作
  */
 public class WifiDetialActivity extends BaseActivity implements View.OnClickListener,ConnectedStatusListener{
 
@@ -102,7 +103,7 @@ public class WifiDetialActivity extends BaseActivity implements View.OnClickList
         tv_disconnect.setVisibility(View.INVISIBLE);
 //        btn_start = (Button)findViewById(R.id.btn_start);
 
-        File file = new File(String.valueOf(Environment.getExternalStorageDirectory()) + "//ConnectResult-wifi.txt");
+        File file = new File(String.valueOf(Environment.getExternalStorageDirectory()) + "//ConnectResult_wifi.txt");
         if(file.exists()){
             file.delete();
         }
