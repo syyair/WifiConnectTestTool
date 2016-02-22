@@ -28,7 +28,8 @@ import greendao.WifiLog;
 
 /**
  * Created by renyiguang on 2015/9/22.
- * 发送热点连接变化的广播
+ * 当网络发生变化时链接或者断开，写入wifilog的数据库中
+ * 当wifi状态发生变化时，可用不可用，输出信息
  */
 public class WifiConnectReceiver extends BroadcastReceiver {
 
@@ -65,12 +66,13 @@ public class WifiConnectReceiver extends BroadcastReceiver {
         if (intent.getAction().equals(WifiManager.NETWORK_STATE_CHANGED_ACTION)) {
             NetworkInfo info = intent.getParcelableExtra(WifiManager.EXTRA_NETWORK_INFO);
             if(info.getState().equals(NetworkInfo.State.DISCONNECTED)){
-
                 Debug.log("NETWORK_STATE_CHANGE_ACTION============WIFI_DISCONNECTED");
                 //Toast.makeText(context, "WIFI_DISCONNECTED", Toast.LENGTH_SHORT).show();
                 Date date = new Date();
                 SimpleDateFormat format = new SimpleDateFormat("yy-MM-dd HH:mm:ss");
 
+
+                //在wifiDetialActivity中点击链接的时候Constant.isConnect置为true
                 if(Constant.isConnect){
                     Iterator<ConnectedStatusListener> connectedStatusListenerIterator = connectedStatusListenerSet.iterator();
                     while (connectedStatusListenerIterator.hasNext()) {
@@ -88,8 +90,8 @@ public class WifiConnectReceiver extends BroadcastReceiver {
 
                 if(Constant.wifiConfiguration != null) {
                     boolean enable = wifiAdmin.addNetwork(Constant.wifiConfiguration);
-
                 }
+                //在Mainactivity中点击终端测试的时候置状态
                 if(Constant.isStart) {
 //                        String str = "WIFI_DISCONNECTED-" + format.format(date) + "\r\n";
 //                        FileUtil.writeFileToSD(str);
@@ -145,6 +147,7 @@ public class WifiConnectReceiver extends BroadcastReceiver {
                     Debug.log("============WIFI_STATE_DISABLED");
 
                     break;
+                //为什么写两个一样的
                 case WifiManager.WIFI_STATE_DISABLING:
                     Debug.log("============WIFI_STATE_DISABLING");
 

@@ -138,7 +138,6 @@ public class MainActivity extends BaseActivity implements View.OnClickListener,A
                     if(registerFlag){
                         unRigisterWIFI();
                     }
-
                     Constant.isWirteTerminalResult = true;
                     File file = new File(String.valueOf(Environment.getExternalStorageDirectory()) + "//ConnectResult_Terminal.txt");
                     if(file.exists()){
@@ -184,18 +183,21 @@ public class MainActivity extends BaseActivity implements View.OnClickListener,A
             }
         }, 1000);
 
-        //查找曾经链接过的wifi最后存入到wifiConfigurationIterator
+        //查找曾经链接过的并且现在在列表中的wifi最后存入到wifiConfigurationIterator
         Iterator<ScanResult> scanResultIterator = orignList.iterator();
         while (scanResultIterator.hasNext()){
             ScanResult scanResult = scanResultIterator.next();
             stringScanResultHashMap.put(scanResult.SSID,scanResult);
+            System.out.println("stringScanResultHashMap sssssssssssssssss" + scanResult.SSID);
         }
 
+        //获得已保存的wifi配置
         wifiConfigurationList = wifiAdmin.getConfiguredNetworks();
         wifiConfigurationIterator = wifiConfigurationList.iterator();
         while (wifiConfigurationIterator.hasNext()){
             WifiConfiguration wifiConfiguration = wifiConfigurationIterator.next();
             String key = wifiConfiguration.SSID.substring(1,wifiConfiguration.SSID.length()-1);
+            System.out.println("wifiConfiguration ssssssssssssssss" + wifiConfiguration.SSID);
             if(!stringScanResultHashMap.containsKey(key)){
                 wifiConfigurationIterator.remove();
             }else {
