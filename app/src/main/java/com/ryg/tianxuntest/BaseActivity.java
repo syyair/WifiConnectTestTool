@@ -22,8 +22,9 @@ import com.ryg.tianxuntest.view.NetProgressDialog;
  * activity创建的基础类
  * 实例化activity_base.xml和tool_bar.xml中的组件
  * 设置view的方法
- * initView（）和setView（）两个抽象方法
+ * initView（）、setView（）、getContentView（）三个抽象方法
  * 一个点击事件（不知道干什么用的）
+ * 设置页面上面toolbar的左边布局和中间布局
  */
 public abstract class BaseActivity extends AppCompatActivity implements View.OnClickListener {
 
@@ -69,19 +70,22 @@ public abstract class BaseActivity extends AppCompatActivity implements View.OnC
         title_bar_center_textview = (TextView)centerView.findViewById(R.id.title_bar_center_tv);
         title_bar_right_textview = (TextView)rightView.findViewById(R.id.title_bar_right_tv);
 
+        //mainContent是activity_base中的main_content
         mainContent = (RelativeLayout)findViewById(R.id.main_content);
+        //mainView方便于BaseActivity的子类的布局加入到mainContent中
         mainView = inflater.inflate(getContentView(),null);
         mainContent.addView(mainView,new RelativeLayout.LayoutParams(RelativeLayout.LayoutParams.MATCH_PARENT,RelativeLayout.LayoutParams.MATCH_PARENT));
 
+        //不知道干嘛用的
         imm = (InputMethodManager) getSystemService(Context.INPUT_METHOD_SERVICE);
         netProgressDialog = new NetProgressDialog(context,R.string.please_waiting);
 
-        //两个抽象方法
+        //两个抽象方法，子类必须实现抽象类父类的所有抽象方法
         initView();
         setView();
     }
 
-    //不知道是干什么用的
+    //按下键盘的返回键
     @Override
     public void onClick(View v) {
         if(v.getId() == R.id.title_bar_left){
@@ -164,6 +168,7 @@ public abstract class BaseActivity extends AppCompatActivity implements View.OnC
         setLeftBack();
         title_bar_left_textview.setText(getResources().getString(id));
     }
+
 
     public void setCenterTextView (int id){
 
